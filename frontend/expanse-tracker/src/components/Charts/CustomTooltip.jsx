@@ -1,3 +1,4 @@
+import { addThousandsSeparator } from "../../utils/helper";
 const CustomTooltip = ({ active, payload }) => {
   if (active && payload && payload.length) {
     return (
@@ -6,7 +7,7 @@ const CustomTooltip = ({ active, payload }) => {
           {payload[0].name}
         </p>
         <p className="text-sm font-medium text-gray-900">
-          Amount : <span className="">${payload[0].value}</span>
+          Amount : <span className="">${addThousandsSeparator(payload[0].value)}</span>
         </p>
       </div>
     );

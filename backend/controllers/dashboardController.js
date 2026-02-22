@@ -46,7 +46,7 @@ exports.getDashboardData = async (req, res) => {
         (txn) => ({ ...txn.toObject(), type: "income" }),
       ),
       ...(await Expanse.find({ userId }).sort({ date: -1 }).limit(5)).map(
-        (txn) => ({ ...txn.toObject(), type: "expanse" }),
+        (txn) => ({ ...txn.toObject(), type: "expense" }),
       ),
     ].sort((a, b) => b.date - a.date);
 

@@ -8,6 +8,8 @@ import {
 } from "recharts";
 import CustomTooltip from "./CustomTooltip";
 import CustomLegend from "./CustomLegend";
+import { addThousandsSeparatorChartBarCircle } from "../../utils/helper";
+
 const CustomPieChart = ({
   data,
   label,
@@ -60,7 +62,7 @@ const CustomPieChart = ({
               fontSize="24px"
               fontWeight="semi-bold"
             >
-              {totalAmount}
+              {addThousandsSeparatorChartBarCircle(totalAmount)}
             </text>
           </>
         )}
